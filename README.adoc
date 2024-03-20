@@ -1,0 +1,52 @@
+= CloudBees action: Run a AWS CodePipeline
+
+Use this action to trigger an {AWS} (AWS) CodePipeline, a fully managed continuous delivery service, and fetch the run information as output.
+
+== Inputs
+
+[cols="2a,1a,1a,3a",options="header"]
+.Input details
+|===
+
+| Input name
+| Data type
+| Required?
+| Description
+
+| `pipeline-name`
+| String
+| Yes
+| The AWS CodePipeline pipeline name.
+
+| `parameters`
+| JSON
+| No
+| AWS CodePipeline parameters, formatted as JSON data in key/value pairs.
+
+|===
+
+== Usage example
+
+In your YAML file, add:
+
+[source,yaml]
+----
+
+    steps:
+      - name: Run AWS CodePipeline
+        uses: cloudbees-io/aws-codepipeline-run-pipeline@v1
+        with:
+          pipeline-name: codepipeline_001
+          parameters: {"parameter1":"test1","parameter2":"test2"}
+
+----
+
+== License
+
+This code is made available under the 
+link:https://opensource.org/license/mit/[MIT license].
+
+== References
+
+* Learn more about link:https://docs.cloudbees.com/docs/cloudbees-saas-platform/latest/actions[using actions in CloudBees workflows].
+* Learn about link:https://docs.cloudbees.com/docs/cloudbees-saas-platform/latest/[the CloudBees platform].
