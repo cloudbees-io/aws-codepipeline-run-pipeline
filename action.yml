@@ -15,7 +15,7 @@ runs:
   steps:
     - id: invoke-aws-code-pipeline-job
       name: invoke-aws-code-pipeline-job
-      uses: docker://public.ecr.aws/l7o7z1g8/actions/aws-codepipeline-invoke-actions:main-f48fcaaf4c87bcadefc423b27d840c3336008d40
+      uses: docker://020229604682.dkr.ecr.us-east-1.amazonaws.com/actions/aws-codepipeline-invoke-actions:CBP-31695-b1ceb81948aafdcf558aaf0224bdac3d3e03aa15
       shell: sh
       env:
         CONFIG_JSON: '{"metaInfo":{"action":"AWS_CODEPIPELINE_ACTIONS","pipelineName":"${{ inputs.pipeline-name }}","parameters":${{ inputs.parameters }}}}'
